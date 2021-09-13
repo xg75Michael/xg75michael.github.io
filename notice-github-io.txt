@@ -1,0 +1,17 @@
+key:
+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
+
+构思1
+只用作个人展示页面，2个页，一个landing page，炫彩艳丽的动效页，等待另一个main页面加载，完成之后跳转，或者直接做成一个页面，展示的是最难最核心的技术。
+这个自然有一些限制，不会有很多展示的机会，要不就要留跳转链接到别的页，两者不相关的那种。
+构思2
+做成blog，header body footer都有，多页面跳转，每个页都是一个blog，感觉需要维护的地方很多，添加一条就需要改比较多的地方
+如果blog里涉及序列帧等多个图片不知道加载速度会怎么样
+构思3
+配合仓库，用.md文件当做目录，直接跳转到各个单独的blog页，可以建立不同的header footer，或者直接省略也可以
+构思4
+只做一个页，当做是网页版CV，主要介绍自己，skill等，酌情加点展示
+
+用 .md 做个 css 列表查询，参考 https://github.com/Wizard67/note-css-order
+写在一个 .dom 里？ 或者两个 .father{} .son{}
+也可以试着写下 js 的方法查询
