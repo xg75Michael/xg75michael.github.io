@@ -19,7 +19,7 @@
     height: 460px;
     margin: 20px;
     background-color: #ddd;
-    box-shadow: 0 0 25px 3px #00f inset;
+    box-shadow: 0 0 25px 3px #150e56 inset;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -68,6 +68,60 @@
     height: 100%;
 }
 
+.dial-second {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #111;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dial-minute {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+    transition: transform 0.6s ease-in;
+    -webkit-transition: transform 0.6s ease-in;
+    -moz-transition: transform 0.6s ease-in;
+    -ms-transition: transform 0.6s ease-in;
+    -o-transition: transform 0.6s ease-in;
+}
+
+.dial-minute::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background-color: #aaa;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.dial-hour {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    transition: transform 1s ease-in-out;
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -ms-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+}
+
 .dial-second span,
 .dial-minute span,
 .dial-hour span {
@@ -82,4 +136,64 @@
     line-height: 0;
     text-align: center;
     transform-origin: 50%;
+}
+
+.compass-clock .dial-decoration {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 100;
+}
+
+.compass-clock .dial-decoration span {
+    position: absolute;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    transform-origin: 50%;
+    text-indent: 1000px;
+    overflow: hidden;
+}
+
+.compass-clock .dial-decoration span::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #7d7e7d;
+    background-image: linear-gradient(to right, #7d7e7d 0%, #0e0e0e 100%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.compass-clock .dial-decoration span:nth-child(5n+1)::after {
+    width: 10px;
+}
+
+.compass-clock .dial-second span::after,
+.compass-clock .dial-minute span::after,
+.compass-clock .dial-hour span::after {
+    content: '';
+    width: 4px;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    left: 130%;
+    top: -10%;
+    opacity: 0.3;
 }
