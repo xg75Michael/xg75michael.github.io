@@ -1,10 +1,10 @@
 import { Button } from '@mui/material';
 
-const HomePage = () => {
+const Contact = () => {
   return (
     <Button variant='contained' color='primary'>
-      Home
+      Contact
     </Button>
   );
 };
-export default HomePage;
+export default Contact;

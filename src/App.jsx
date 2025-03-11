@@ -1,9 +1,8 @@
-import Button from '@mui/material/Button';
-import routes from '@/router';
 import { useRoutes } from 'react-router-dom';
+import routes from '@/router';
 import { Suspense } from 'react';
 
-import './App.css';
+import '@/App.css';
 
 function App() {
   const element = useRoutes(routes);
