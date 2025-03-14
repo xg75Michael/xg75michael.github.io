@@ -14,7 +14,7 @@ const Hero = () => {
         backgroundImage: `url(${heroBackground})`,
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
-        backgroundPosition: 'center',
+        backgroundPosition: 'bottom',
         color: 'white',
         textAlign: 'center',
         pt: 12,

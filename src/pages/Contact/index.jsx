@@ -1,8 +1,8 @@
-import { Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Contact = () => {
   return (
-    <Container
+    <Box
       id='contact'
       sx={{
         display: 'flex',
@@ -16,7 +16,7 @@ const Contact = () => {
         Contact
       </Typography>
       <Typography variant='body1'>Contact details and form for TFL Homes.</Typography>
-    </Container>
+    </Box>
   );
 };
 export default Contact;

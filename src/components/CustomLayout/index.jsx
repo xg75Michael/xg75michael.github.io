@@ -1,16 +1,17 @@
+// filepath: /Users/xiangyangao/workspace/github/xg75michael.github.io/src/components/CustomLayout/index.jsx
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 import CustomAppBar from '@/components/CustomAppBar';
+import BackToTop from '@/components/BackToTop';
+import Footer from '@/components/CustomFooter';
 
 const CustomLayout = () => {
   return (
     <div>
-      <CustomAppBar></CustomAppBar>
+      <CustomAppBar />
       <Outlet />
-      <footer style={{ textAlign: 'center', padding: '2rem', background: '#f1f1f1' }}>
-        <Typography variant='body1'>Footer content</Typography>
-      </footer>
+      <Footer />
+      <BackToTop />
     </div>
   );
 };

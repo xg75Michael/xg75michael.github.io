@@ -1,6 +1,6 @@
 import { Typography, Box } from '@mui/material';
 
-const Hero = () => {
+const Services = () => {
   return (
     <Box
       id='services'
@@ -19,4 +19,5 @@ const Hero = () => {
     </Box>
   );
 };
-export default Hero;
+
+export default Services;
