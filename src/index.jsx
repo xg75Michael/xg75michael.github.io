@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/style/theme';
+import '@/style/global.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
