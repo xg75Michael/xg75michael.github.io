@@ -83,11 +83,13 @@ const Services = () => {
             animate={textInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 1 }}>
             <Typography variant='h2' gutterBottom color='primary'>
-              Title for this image
+              Public Drainage
             </Typography>
             <Typography variant='body1' color='primary' pb={4}>
-              Description of services offered by TFL Homes. Description of services offered by TFL Homes. Description of
-              services offered by TFL HomesTFL HomesTFL Homes.
+              Our Public Drainage service ensures that municipal drainage systems are installed, maintained, and
+              repaired to meet the highest standards. We provide advice on Construction Programme and Method. We do the
+              set up and risk assessment. Our team ensures that your public drainage infrastructure remains efficient
+              and reliable.
             </Typography>
           </motion.div>
         </Box>
@@ -115,11 +117,13 @@ const Services = () => {
             animate={textInView2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1 }}>
             <Typography variant='h2' gutterBottom color='primary'>
-              Title for this image
+              Private Drainage
             </Typography>
             <Typography variant='body1' color='primary' pb={4}>
-              Description of services offered by TFL Homes. Description of services offered by TFL Homes. Description of
-              services offered by TFL HomesTFL HomesTFL Homes.
+              Our team provide expert Private Drainage services, which focus on the drainage systems within your
+              property. From the installation of new drainage solutions to the maintenance and repair of existing
+              systems, our skilled technicians ensure that your private drainage operates without issue. This service is
+              essential for homeowners and businesses alike to prevent flooding, blockages, and other drainage problems.
             </Typography>
           </motion.div>
         </Box>
@@ -167,11 +171,13 @@ const Services = () => {
             animate={textInView3 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1 }}>
             <Typography variant='h2' gutterBottom color='primary'>
-              Title for this image
+              Plumbing
             </Typography>
             <Typography variant='body1' color='primary' pb={4}>
-              Description of services offered by TFL Homes. Description of services offered by TFL Homes. Description of
-              services offered by TFL HomesTFL HomesTFL Homes.
+              Our Plumbing service covers all aspects of residential and commercial plumbing needs. Whether it's pipe
+              installation, leak repairs, or routine maintenance, we offer comprehensive plumbing solutions. We handle
+              everything from bathroom fittings to kitchen plumbing, ensuring that your plumbing system functions
+              properly and efficiently.
             </Typography>
           </motion.div>
         </Box>

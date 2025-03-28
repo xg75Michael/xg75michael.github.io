@@ -58,31 +58,36 @@ const AboutUs = () => {
           alignItems: 'left',
           backgroundColor: '#000',
         }}>
-        <Typography variant='h1' gutterBottom color='secondary'>
+        <Typography variant='h1' gutterBottom color='primary'>
           About Us
         </Typography>
-        <Typography ref={inViewRef1} variant='h2' gutterBottom color='secondary'>
+        <Typography variant='body1' gutterBottom color='secondary'>
+          TFL Homes is a provider of specialized plumbing and drainage solutions. We are committed to delivering
+          high-quality services with professionalism, reliability, and attention to detail. With years of experience in
+          the industry, we offer a range of services to meet both residential and commercial needs.
+        </Typography>
+        <Typography ref={inViewRef1} variant='body1' gutterBottom color='secondary'>
           <motion.span
             color='primary'
             style={{
               display: 'inline-block',
               minWidth: '120px',
               paddingRight: '24px',
-              fontSize: '52px',
+              fontSize: '48px',
               color: '#3275bc',
             }}>
             {roundedNumber1}
           </motion.span>
           years years years years yearsyears
         </Typography>
-        <Typography ref={inViewRef2} variant='h2' gutterBottom color='secondary'>
+        <Typography ref={inViewRef2} variant='body1' gutterBottom color='secondary'>
           <motion.span
             color='primary'
             style={{
               display: 'inline-block',
               minWidth: '120px',
               paddingRight: '24px',
-              fontSize: '52px',
+              fontSize: '48px',
               color: '#3275bc',
             }}>
             {roundedNumber2}
@@ -90,14 +95,14 @@ const AboutUs = () => {
           project project project project projectproject project project project projectproject project project project
           project
         </Typography>
-        <Typography ref={inViewRef3} variant='h2' gutterBottom color='secondary'>
+        <Typography ref={inViewRef3} variant='body1' gutterBottom color='secondary'>
           <motion.span
             color='primary'
             style={{
               display: 'inline-block',
               minWidth: '120px',
               paddingRight: '24px',
-              fontSize: '52px',
+              fontSize: '48px',
               color: '#3275bc',
             }}>
             {roundedNumber3}

@@ -31,12 +31,15 @@ const Hero = () => {
           justifyContent: 'center',
           alignItems: 'flex-start',
         }}>
-        <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            maxWidth: '1200px',
+          }}>
           <StyledTypography variant='h1' color='primary'>
-            Welcome to TFL Homes
-          </StyledTypography>
-          <StyledTypography variant='h1' color='primary'>
-            Your Comfort, Our Priority, Always.
+            Contact us today for all your drainage, plumbing, and gas fitting needs!
           </StyledTypography>
         </motion.div>
       </Box>
