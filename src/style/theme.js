@@ -10,7 +10,7 @@ const theme = createTheme({
       main: '#3275bc', // Set primary color to #3275bc
     },
     secondary: {
-      main: '#dc004e',
+      main: '#ddd',
     },
     background: {
       default: '#f5f5f5',
