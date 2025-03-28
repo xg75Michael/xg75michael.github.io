@@ -12,6 +12,8 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
+import logo from '@/assets/logo.svg';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -20,16 +22,16 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   flexShrink: 0,
   borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
   backdropFilter: 'blur(24px)',
-  border: '1px solid',
-  borderColor: (theme.vars || theme).palette.divider,
-  backgroundColor: theme.vars
-    ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.4)`
-    : alpha(theme.palette.background.default, 0.4),
-  boxShadow: (theme.vars || theme).shadows[1],
-  padding: '8px 24px',
+  padding: '16px 32px',
 }));
 
-const CustomAppBar = () => {
+const StyledLogo = styled('img')({
+  cursor: 'pointer',
+  height: '60px',
+  display: 'block',
+});
+
+const CustomAppBar = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -37,41 +39,41 @@ const CustomAppBar = () => {
   };
 
   return (
-    <AppBar
-      position='fixed'
-      enableColorOnDark
-      sx={{
-        boxShadow: 0,
-        bgcolor: 'transparent',
-        backgroundImage: 'none',
-        mt: 'calc(var(--template-frame-height, 0px) + 28px)',
-      }}>
-      <Container maxWidth='lg'>
-        <StyledToolbar variant='dense' disableGutters>
+    <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <AppBar
+        position='fixed'
+        enableColorOnDark
+        sx={{
+          boxShadow: 0,
+          bgcolor: 'transparent',
+          backgroundImage: 'none',
+          width: '100%',
+        }}>
+        <StyledToolbar>
           <Box
             sx={{
               flexGrow: 1,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              px: 0,
+              px: 12,
             }}>
-            <Link to='hero' smooth={true} duration={500}>
-              <span style={{ cursor: 'pointer' }}>Logo</span>
+            <Link to='hero' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <StyledLogo src={logo} alt='Logo' />
             </Link>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Link to='services' smooth={true} duration={500}>
-                <Button variant='text' color='info' size='small'>
+              <Link to='services' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button variant='text' color='primary' size='medium'>
                   Services
                 </Button>
               </Link>
-              <Link to='aboutus' smooth={true} duration={500}>
-                <Button variant='text' color='info' size='small'>
+              <Link to='aboutus' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button variant='text' color='primary' size='medium'>
                   About Us
                 </Button>
               </Link>
-              <Link to='contact' smooth={true} duration={500}>
-                <Button variant='text' color='info' size='small'>
+              <Link to='contact' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button variant='text' color='primary' size='medium'>
                   Contact
                 </Button>
               </Link>
@@ -100,13 +102,13 @@ const CustomAppBar = () => {
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <Link to='services' smooth={true} duration={500}>
+                <Link to='services' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <MenuItem onClick={toggleDrawer(false)}>Services</MenuItem>
                 </Link>
-                <Link to='aboutus' smooth={true} duration={500}>
+                <Link to='aboutus' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <MenuItem onClick={toggleDrawer(false)}>About Us</MenuItem>
                 </Link>
-                <Link to='contact' smooth={true} duration={500}>
+                <Link to='contact' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <MenuItem onClick={toggleDrawer(false)}>Contact</MenuItem>
                 </Link>
                 <Divider sx={{ my: 3 }} />
@@ -114,8 +116,8 @@ const CustomAppBar = () => {
             </Drawer>
           </Box>
         </StyledToolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+    </motion.div>
   );
 };
 

@@ -1,32 +1,49 @@
 import { Container, Typography, Box } from '@mui/material';
-import heroBackground from '@/assets/heroBackground.jpg';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { styled } from '@mui/material/styles';
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  fontSize: '4rem', // Adjust the font size as needed
+  fontWeight: 'thin',
+  marginBottom: theme.spacing(8), // Adjust the spacing as needed
+}));
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, window.innerHeight / 2], ['50vh', '0vh']);
+  const background = useTransform(
+    scrollY,
+    [0, window.innerHeight / 2],
+    ['linear-gradient(135deg, #ffffff 10%,#6196ec 100%)', 'linear-gradient(-135deg, #ffffff 10%, #6196ec 100%)'],
+  );
+
   return (
-    <Box
-      id='hero'
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '60vh',
-        backgroundImage: `url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'bottom',
-        color: 'white',
-        textAlign: 'center',
-        pt: 12,
-      }}>
-      <Typography variant='h2' gutterBottom>
-        Welcome to TFL Homes
-      </Typography>
-      <Typography variant='subtitle1' gutterBottom>
-        Your Comfort, Our Priority
-      </Typography>
-      <Typography variant='body1'>We provide quality services to make your stay comfortable and memorable.</Typography>
-    </Box>
+    <motion.div style={{ position: 'relative', zIndex: 2, y, background }}>
+      <Box
+        id='hero'
+        sx={{
+          position: 'relative', // Ensure the section is positioned relative to its normal position
+          height: '100vh',
+          marginTop: '-50vh',
+          padding: '0 96px', // Safety space
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+        }}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            maxWidth: '1200px',
+          }}>
+          <StyledTypography variant='h1' color='primary'>
+            Contact us today for all your drainage, plumbing, and gas fitting needs!
+          </StyledTypography>
+        </motion.div>
+      </Box>
+    </motion.div>
   );
 };
 
