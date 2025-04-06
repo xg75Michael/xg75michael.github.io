@@ -59,33 +59,39 @@ const Contact = () => {
   return (
     <Box
       id='contact'
-      sx={{
+      sx={(theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
-        px: { xs: 2, md: 4 }, // Consistent padding for all screen sizes
-      }}>
+        padding: theme.spacing(16, 12), // Safety space using theme.spacing
+        [theme.breakpoints.down('sm')]: {
+          padding: theme.spacing(8, 4), // Smaller padding for small screens
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+        },
+        [theme.breakpoints.up('xl')]: {
+          padding: theme.spacing(16, 24), // Smaller padding for small screens
+        },
+      })}>
       {/* Left Side: Title and Text */}
       <Box
         sx={{
-          maxWidth: '600px',
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'flex-start',
-          pr: { xs: 2, md: 4 }, // Consistent padding for right side
+          pr: { xs: 0, sm: 2, md: 8 },
         }}>
-        <Typography variant='h2' gutterBottom>
+        <Typography variant='h2' gutterBottom sx={{ mb: 4 }}>
           Contact Us
         </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
           <LocationOnIcon color='primary' />
           <Typography variant='body1'>1234 Street Name, City, State, 12345</Typography>
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
           <PhoneIcon color='primary' />
           <Typography variant='body1'>Phone: (123) 456-7890</Typography>
         </Box>
@@ -99,14 +105,16 @@ const Contact = () => {
       <Box
         component='form'
         onSubmit={handleSubmit}
-        sx={{
+        sx={(theme) => ({
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
-          maxWidth: '400px',
-          px: { xs: 2, md: 4 }, // Consistent padding for left and right sides
-        }}>
+          [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            pt: 4,
+          },
+        })}>
         <TextField
           label='First Name'
           name='firstName'
