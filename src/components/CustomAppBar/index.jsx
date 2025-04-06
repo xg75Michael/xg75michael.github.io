@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
@@ -21,15 +20,24 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'space-between',
   flexShrink: 0,
   borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
-  backdropFilter: 'blur(24px)',
-  padding: '16px 32px',
+  backdropFilter: 'blur(4px)',
+  padding: theme.spacing(2, 12), // Default padding
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2, 4), // Smaller padding for small screens
+  },
+  [theme.breakpoints.up('xl')]: {
+    padding: theme.spacing(2, 24), // Smaller padding for small screens
+  },
 }));
 
-const StyledLogo = styled('img')({
+const StyledLogo = styled('img')(({ theme }) => ({
   cursor: 'pointer',
   height: '60px',
   display: 'block',
-});
+  [theme.breakpoints.down('sm')]: {
+    height: '40px', // Smaller logo for small screens
+  },
+}));
 
 const CustomAppBar = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -46,22 +54,20 @@ const CustomAppBar = (props) => {
         sx={{
           boxShadow: 0,
           bgcolor: 'transparent',
-          backgroundImage: 'none',
           width: '100%',
         }}>
-        <StyledToolbar>
+        <StyledToolbar disableGutters>
           <Box
             sx={{
               flexGrow: 1,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              px: 12,
             }}>
             <Link to='hero' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
               <StyledLogo src={logo} alt='Logo' />
             </Link>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 2 }}>
               <Link to='services' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Button variant='text' color='primary' size='medium'>
                   Services
@@ -79,7 +85,7 @@ const CustomAppBar = (props) => {
               </Link>
             </Box>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
+          <Box sx={{ display: { xs: 'flex', sm: 'none' }, gap: 1 }}>
             <IconButton aria-label='Menu button' onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
@@ -92,7 +98,7 @@ const CustomAppBar = (props) => {
                   top: 'var(--template-frame-height, 0px)',
                 },
               }}>
-              <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
+              <Box sx={{ p: { xs: 2, md: 4 }, backgroundColor: 'background.default' }}>
                 <Box
                   sx={{
                     display: 'flex',

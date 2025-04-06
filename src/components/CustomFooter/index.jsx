@@ -8,19 +8,20 @@ const Footer = () => {
       component='footer'
       sx={{
         display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' }, // Responsive layout
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '2rem',
+        padding: { xs: 2, md: 4 }, // Consistent padding for large and small screens
         background: '#f1f1f1',
-        textAlign: 'center',
+        textAlign: { xs: 'center', md: 'left' },
       }}>
-      <Box sx={{ textAlign: 'left' }}>
+      <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant='body1'>TFL Homes</Typography>
         <Typography variant='body2'>1234 Street Name, City, State, 12345</Typography>
         <Typography variant='body2'>Email: info@tflhomes.com</Typography>
         <Typography variant='body2'>Phone: (123) 456-7890</Typography>
       </Box>
-      <Box>
+      <Box sx={{ mt: { xs: 2, md: 0 } }}>
         <IconButton
           component='a'
           href='https://www.facebook.com/yourprofile'

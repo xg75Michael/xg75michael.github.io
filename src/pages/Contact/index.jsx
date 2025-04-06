@@ -65,8 +65,7 @@ const Contact = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        // backgroundColor: 'lightyellow',
-        px: 4,
+        px: { xs: 2, md: 4 }, // Consistent padding for all screen sizes
       }}>
       {/* Left Side: Title and Text */}
       <Box
@@ -77,7 +76,7 @@ const Contact = () => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'flex-start',
-          pr: 24,
+          pr: { xs: 2, md: 4 }, // Consistent padding for right side
         }}>
         <Typography variant='h2' gutterBottom>
           Contact Us
@@ -106,6 +105,7 @@ const Contact = () => {
           flexDirection: 'column',
           gap: 2,
           maxWidth: '400px',
+          px: { xs: 2, md: 4 }, // Consistent padding for left and right sides
         }}>
         <TextField
           label='First Name'
