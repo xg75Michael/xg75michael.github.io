@@ -6,28 +6,37 @@ const Footer = () => {
   return (
     <Box
       component='footer'
-      sx={{
+      sx={(theme) => ({
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' }, // Responsive layout
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: { xs: 2, md: 4 }, // Consistent padding for large and small screens
+        p: {
+          xs: 4,
+          md: theme.spacing(4, 12),
+          xl: theme.spacing(8, 24),
+        },
         background: '#f1f1f1',
         textAlign: { xs: 'center', md: 'left' },
-      }}>
+      })}>
       <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant='body1'>TFL Homes</Typography>
         <Typography variant='body2'>1234 Street Name, City, State, 12345</Typography>
         <Typography variant='body2'>Email: info@tflhomes.com</Typography>
         <Typography variant='body2'>Phone: (123) 456-7890</Typography>
       </Box>
-      <Box sx={{ mt: { xs: 2, md: 0 } }}>
+      <Box sx={{ mt: { xs: 4, md: 0 } }}>
         <IconButton
           component='a'
           href='https://www.facebook.com/yourprofile'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Facebook'>
+          aria-label='Facebook'
+          sx={{
+            '&:hover': {
+              color: '#4267B2', // Facebook blue
+            },
+          }}>
           <Facebook />
         </IconButton>
         <IconButton
@@ -35,7 +44,12 @@ const Footer = () => {
           href='https://www.twitter.com/yourprofile'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Twitter'>
+          aria-label='Twitter'
+          sx={{
+            '&:hover': {
+              color: '#1DA1F2', // Twitter blue
+            },
+          }}>
           <Twitter />
         </IconButton>
         <IconButton
@@ -43,7 +57,12 @@ const Footer = () => {
           href='https://www.instagram.com/yourprofile'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Instagram'>
+          aria-label='Instagram'
+          sx={{
+            '&:hover': {
+              color: '#E1306C', // Instagram pink
+            },
+          }}>
           <Instagram />
         </IconButton>
         <IconButton
@@ -51,7 +70,12 @@ const Footer = () => {
           href='https://www.linkedin.com/yourprofile'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='LinkedIn'>
+          aria-label='LinkedIn'
+          sx={{
+            '&:hover': {
+              color: '#0077B5', // LinkedIn blue
+            },
+          }}>
           <LinkedIn />
         </IconButton>
       </Box>
