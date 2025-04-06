@@ -48,16 +48,22 @@ const AboutUs = () => {
       <Box
         id='aboutus'
         ref={refScrollY}
-        sx={{
+        sx={(theme) => ({
           marginTop: '-50vh',
           height: '100vh',
-          px: 24,
+          px: theme.spacing(12),
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'left',
           backgroundColor: '#000',
-        }}>
+          [theme.breakpoints.down('sm')]: {
+            px: theme.spacing(4), // Smaller padding for small screens
+          },
+          [theme.breakpoints.up('xl')]: {
+            px: theme.spacing(24), // Smaller padding for small screens
+          },
+        })}>
         <Typography variant='h1' gutterBottom color='primary'>
           About Us
         </Typography>
