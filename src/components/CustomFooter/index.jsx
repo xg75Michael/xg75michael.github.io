@@ -21,9 +21,8 @@ const Footer = () => {
       })}>
       <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant='body1'>TFL Homes</Typography>
-        <Typography variant='body2'>1234 Street Name, City, State, 12345</Typography>
-        <Typography variant='body2'>Email: info@tflhomes.com</Typography>
-        <Typography variant='body2'>Phone: (123) 456-7890</Typography>
+        <Typography variant='body2'>Email: tfldrainage@gmail.com</Typography>
+        <Typography variant='body2'>Phone: +64 210398136</Typography>
       </Box>
       <Box sx={{ mt: { xs: 4, md: 0 } }}>
         <IconButton

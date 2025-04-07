@@ -88,16 +88,12 @@ const Contact = () => {
           Contact Us
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-          <LocationOnIcon color='primary' />
-          <Typography variant='body1'>1234 Street Name, City, State, 12345</Typography>
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
           <PhoneIcon color='primary' />
-          <Typography variant='body1'>Phone: (123) 456-7890</Typography>
+          <Typography variant='body1'>Phone: +64 210398136</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <EmailIcon color='primary' />
-          <Typography variant='body1'>Email: info@tflhomes.com</Typography>
+          <Typography variant='body1'>Email: tfldrainage@gmail.com</Typography>
         </Box>
       </Box>
 
