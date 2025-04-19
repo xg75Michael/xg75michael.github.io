@@ -19,14 +19,14 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
-  borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
+  borderRadius: '0 0 12px 12px',
   backdropFilter: 'blur(4px)',
-  padding: theme.spacing(2, 12), // Default padding
+  padding: theme.spacing(1, 12), // Default padding
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2, 4), // Smaller padding for small screens
+    padding: theme.spacing(1, 4), // Smaller padding for small screens
   },
   [theme.breakpoints.up('xl')]: {
-    padding: theme.spacing(2, 24), // Smaller padding for small screens
+    padding: theme.spacing(1, 24), // Larger padding for extra-large screens
   },
 }));
 
@@ -69,17 +69,22 @@ const CustomAppBar = (props) => {
             </Link>
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 2 }}>
               <Link to='services' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button variant='text' color='primary' size='medium'>
+                <Button variant='text' color='primary' size='medium' sx={{ fontWeight: 'bold' }}>
                   Services
                 </Button>
               </Link>
+              <Link to='gallery' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button variant='text' color='primary' size='medium' sx={{ fontWeight: 'bold' }}>
+                  Gallery
+                </Button>
+              </Link>
               <Link to='aboutus' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button variant='text' color='primary' size='medium'>
+                <Button variant='text' color='primary' size='medium' sx={{ fontWeight: 'bold' }}>
                   About Us
                 </Button>
               </Link>
               <Link to='contact' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button variant='text' color='primary' size='medium'>
+                <Button variant='text' color='primary' size='medium' sx={{ fontWeight: 'bold' }}>
                   Contact
                 </Button>
               </Link>
@@ -109,13 +114,24 @@ const CustomAppBar = (props) => {
                   </IconButton>
                 </Box>
                 <Link to='services' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <MenuItem onClick={toggleDrawer(false)}>Services</MenuItem>
+                  <MenuItem onClick={toggleDrawer(false)} sx={{ fontWeight: 'bold' }}>
+                    Services
+                  </MenuItem>
+                </Link>
+                <Link to='gallery' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <MenuItem onClick={toggleDrawer(false)} sx={{ fontWeight: 'bold' }}>
+                    Gallery
+                  </MenuItem>
                 </Link>
                 <Link to='aboutus' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <MenuItem onClick={toggleDrawer(false)}>About Us</MenuItem>
+                  <MenuItem onClick={toggleDrawer(false)} sx={{ fontWeight: 'bold' }}>
+                    About Us
+                  </MenuItem>
                 </Link>
                 <Link to='contact' smooth={true} duration={500} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <MenuItem onClick={toggleDrawer(false)}>Contact</MenuItem>
+                  <MenuItem onClick={toggleDrawer(false)} sx={{ fontWeight: 'bold' }}>
+                    Contact
+                  </MenuItem>
                 </Link>
                 <Divider sx={{ my: 3 }} />
               </Box>

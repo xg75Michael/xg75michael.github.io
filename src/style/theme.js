@@ -7,10 +7,10 @@ const theme = createTheme({
       secondary: '#666',
     },
     primary: {
-      main: '#3275bc', // Set primary color to #3275bc
+      main: 'rgba(0, 0, 0, 0.8)', // Set primary color to #3275bc
     },
     secondary: {
-      main: '#ddd',
+      main: '#3275bc',
     },
     background: {
       default: '#f5f5f5',
