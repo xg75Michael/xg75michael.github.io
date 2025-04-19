@@ -3,7 +3,7 @@ const Gallery = () => {
   return (
     <Box id='gallery'>
       <h1>Gallery</h1>
-      <p>Gallery content goes here.</p>
+      {/* <p>Gallery content goes here.</p> */}
     </Box>
   );
 };

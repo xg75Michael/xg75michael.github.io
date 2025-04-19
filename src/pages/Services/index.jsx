@@ -1,8 +1,9 @@
 import { Typography, Box } from '@mui/material';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import service1 from '@/assets/service1.jpeg';
-import service2 from '@/assets/service2.jpeg';
-import service3 from '@/assets/service3.jpeg';
+import service1 from '@/assets//services/service1.jpeg';
+import service2 from '@/assets//services/service2.jpeg';
+import service3 from '@/assets//services/service3.jpeg';
+import service4 from '@/assets//services/service4.jpg';
 import { useRef } from 'react';
 
 const Services = () => {
@@ -28,6 +29,12 @@ const Services = () => {
   const transform3 = useTransform(scrollYProgress3, [0, 1], [30, -30]);
 
   // const scale2 = useTransform(scrollY, [0, (window.innerHeight / 4) * 3], [1, 1.2]);
+  const reftransform4 = useRef(null);
+  const { scrollYProgress: scrollYProgress4 } = useScroll({
+    target: reftransform4,
+    offset: ['center end', 'end center'],
+  });
+  const transform4 = useTransform(scrollYProgress4, [0, 1], [-30, 30]);
 
   const textRef1 = useRef(null);
   const textInView1 = useInView(textRef1, { margin: '0px 0px -100px 0px' });
@@ -37,6 +44,9 @@ const Services = () => {
 
   const textRef3 = useRef(null);
   const textInView3 = useInView(textRef3, { margin: '0px 0px -100px 0px' });
+
+  const textRef4 = useRef(null);
+  const textInView4 = useInView(textRef4, { margin: '0px 0px -100px 0px' });
 
   return (
     <Box
@@ -271,7 +281,7 @@ const Services = () => {
               height: 'auto', // Adjust height automatically
             },
           })}>
-          <motion.div style={{ scale: 1.5, translateX: transform3 }}>
+          <motion.div style={{ scale: 1.2, translateX: transform3 }}>
             <Box
               component='img'
               src={service3}
@@ -280,6 +290,85 @@ const Services = () => {
                 width: '100%',
               }}
             />
+          </motion.div>
+        </Box>
+      </Box>
+      <Box
+        sx={(theme) => ({
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          pt: theme.spacing(16), // Default padding top
+          pb: theme.spacing(16), // Default padding bottom
+          [theme.breakpoints.down('sm')]: {
+            pt: theme.spacing(4), // Smaller padding for small screens
+            pb: theme.spacing(4), // Smaller padding for small screens
+          },
+          [theme.breakpoints.up('xl')]: {
+            pt: theme.spacing(32), // Larger padding for extra-large screens
+            pb: theme.spacing(32), // Larger padding for extra-large screens
+          },
+          [theme.breakpoints.down('md')]: {
+            flexDirection: 'column', // Change to column for screens less than 900px
+          },
+        })}>
+        <Box
+          ref={reftransform4}
+          sx={(theme) => ({
+            width: '40vw',
+            flexShrink: 0,
+            overflow: 'hidden',
+            [theme.breakpoints.down('md')]: {
+              width: '100%', // Full width for screens less than 900px
+              height: 'auto', // Adjust height automatically
+            },
+          })}>
+          <motion.div style={{ scale: 1.2, translateX: transform4 }}>
+            <Box
+              component='img'
+              src={service4}
+              alt='Aquacomb Service Image'
+              sx={{
+                width: '100%',
+              }}
+            />
+          </motion.div>
+        </Box>
+        <Box
+          ref={textRef4}
+          sx={(theme) => ({
+            maxWidth: '300px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            alignItems: 'flex-start',
+            marginLeft: theme.spacing(8), // Space between text and image
+            [theme.breakpoints.down('sm')]: {
+              marginLeft: theme.spacing(4), // Smaller margin for small screens
+            },
+            [theme.breakpoints.up('xl')]: {
+              marginLeft: theme.spacing(16), // Larger margin for extra-large screens
+            },
+            [theme.breakpoints.down('md')]: {
+              maxWidth: 'none',
+              marginLeft: 0, // Reset margin for column layout
+              pt: theme.spacing(4), // Add top margin for spacing
+            },
+          })}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={textInView4 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 1 }}>
+            <Typography variant='h2' gutterBottom color='primary'>
+              Aquacomb
+            </Typography>
+            <Typography variant='body1' color='primary' pb={4}>
+              Our Aquacomb service provides innovative water storage solutions for residential and commercial
+              properties. Designed to integrate seamlessly with your building's structure, Aquacomb systems ensure
+              efficient water management and sustainability. Whether for rainwater harvesting or stormwater management,
+              our team ensures a reliable and effective solution tailored to your needs.
+            </Typography>
           </motion.div>
         </Box>
       </Box>
