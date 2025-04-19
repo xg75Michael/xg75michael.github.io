@@ -24,6 +24,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   padding: theme.spacing(1, 12), // Default padding
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(1, 4), // Smaller padding for small screens
+    backdropFilter: 'none',
   },
   [theme.breakpoints.up('xl')]: {
     padding: theme.spacing(1, 24), // Larger padding for extra-large screens
