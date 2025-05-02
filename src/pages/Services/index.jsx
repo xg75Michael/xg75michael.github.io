@@ -221,14 +221,11 @@ const Services = () => {
           justifyContent: 'center',
           alignItems: 'center',
           pt: theme.spacing(16), // Default padding top
-          pb: theme.spacing(16), // Default padding bottom
           [theme.breakpoints.down('sm')]: {
             pt: theme.spacing(4), // Smaller padding for small screens
-            pb: theme.spacing(4), // Smaller padding for small screens
           },
           [theme.breakpoints.up('xl')]: {
             pt: theme.spacing(32), // Larger padding for extra-large screens
-            pb: theme.spacing(32), // Larger padding for extra-large screens
           },
           [theme.breakpoints.down('md')]: {
             flexDirection: 'column-reverse', // Change to column for screens less than 900px

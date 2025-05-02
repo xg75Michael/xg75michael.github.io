@@ -33,10 +33,10 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 const StyledLogo = styled('img')(({ theme }) => ({
   cursor: 'pointer',
-  height: '80px',
+  height: '160px',
   display: 'block',
   [theme.breakpoints.down('sm')]: {
-    height: '40px', // Smaller logo for small screens
+    height: '60px', // Smaller logo for small screens
   },
 }));
 

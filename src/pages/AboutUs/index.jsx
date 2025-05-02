@@ -72,7 +72,7 @@ const AboutUs = () => {
           high-quality services with professionalism, reliability, and attention to detail. With years of experience in
           the industry, we offer a range of services to meet both residential and commercial needs.
         </Typography>
-        <Typography ref={inViewRef1} variant='body1' gutterBottom color='secondary'>
+        {/* <Typography ref={inViewRef1} variant='body1' gutterBottom color='secondary'>
           <motion.span
             color='primary'
             style={{
@@ -114,7 +114,7 @@ const AboutUs = () => {
             {roundedNumber3}
           </motion.span>
           xxxxx xxxxx xxxxx xxxxx xxxxx
-        </Typography>
+        </Typography> */}
       </Box>
     </motion.div>
   );
